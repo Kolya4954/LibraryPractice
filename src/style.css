@@ -1,14 +1,19 @@
-h1{
-    color: red;
-}
-
-.Sub{
-    background-color: green;
-    padding: 20px 20px;
+.btn{
+    padding: 20px 50px;
     color: white;
+    background-color: aqua;
+    border-radius: 20px;
+    font-size: 20px;
 }
-.UnSub{
-    background-color: red;
-    padding: 20px 20px;
-    color: white;
+.center{
+        display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    align-items: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
 }
