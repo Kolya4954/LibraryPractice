@@ -227,6 +227,7 @@ window.addEventListener("keydown", (elem) => {
 
     if(currentKeyIndex !== keys.length-1){
         currentKeyIndex ++
+        keyRef.textContent = keys[currentKeyIndex];
     }
     else if(currentKeyIndex === keys.length-1){
       success({
