@@ -34,11 +34,11 @@
     "@pnotify/font-awesome5-fix": "^5.2.0",
     "@pnotify/glyphicon": "^5.2.0",
     "@pnotify/mobile": "^5.2.0",
+    "gh-pages": "^6.3.0",
     "parcel": "^2.16.4"
   },
   "dependencies": {
     "chart.js": "^4.5.1",
-    "gh-pages": "^6.3.0",
     "nanoid": "^5.1.7",
     "pnotify": "^5.2.0"
   }
