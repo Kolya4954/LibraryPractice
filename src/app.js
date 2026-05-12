@@ -98,13 +98,10 @@
 
 
 
-// import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 
 
-// const ctx = document.getElementById('sales-chart');
-
-
-
+const ctx = document.getElementById('sales-chart');
 
 
 
@@ -113,25 +110,28 @@
 
 
 
-// const chartData = {
-//   labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
-//   datasets: [
-//     {
-//       label: "Продажі за останній місяць",
-//       data: [150, 220, 180, 200, 250, 300, 280, 350, 400, 380, 420, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300, 1350],
-//       backgroundColor: "#2196f3",
-//       borderColor: "#2196f3",
-//       borderWidth: 1,
-//     },
-//   ],
-// };
 
-// const config = {
-//     type:'line',
-//     data: chartData,
-//     options: {}
-// }
-// const salesChart = new Chart(ctx, config);
+
+
+const chartData = {
+  labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
+  datasets: [
+    {
+      label: "Продажі за останній місяць",
+      data: [150, 220, 180, 200, 250, 300, 280, 350, 400, 380, 420, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300, 1350],
+      backgroundColor: "#2196f3",
+      borderColor: "#2196f3",
+      borderWidth: 1,
+    },
+  ],
+};
+
+const config = {
+    type:'line',
+    data: chartData,
+    options: {}
+}
+const salesChart = new Chart(ctx, config);
 
 
 
@@ -209,36 +209,34 @@ keyRef.textContent = keys[currentKeyIndex]
 
 window.addEventListener("keydown", (elem) => {
     if(elem.key !== keys[currentKeyIndex]){
+        
         error({
             title: "неправильна клавіша :d",
             text: "Схоже, що ви натиснула на неправильну кнопку.",
             delay: 2000
+        });
 
-        })  
-    }
-        else{
+    } else {
+
         success({
-  title: "Ура :D",
-  text: "Ви натиснули на правильну кнопку!",
-  delay: 2000
+            title: "Ура :D",
+            text: "Ви натиснули на правильну кнопку!",
+            delay: 2000
+        });
+
+        if(currentKeyIndex !== keys.length - 1){
+
+            currentKeyIndex++;
+            keyRef.textContent = keys[currentKeyIndex];
+
+        } else {
+
+            success({
+                title: "Гра пройдена!",
+                text: "Ви молодець",
+                delay: 2000
+            });
+
+        }
+    }
 });
-    };
-    
-
-    if(currentKeyIndex !== keys.length-1){
-        currentKeyIndex ++
-        keyRef.textContent = keys[currentKeyIndex];
-    }
-    else if(currentKeyIndex === keys.length-1){
-      success({
-        title: "Гра пройдена!",
-        text: "Ви молодець",
-        delay: 2000
-      })
-          keyRef.textContent = keys[currentKeyIndex];
-      
-    }
-
-    })
-
-
